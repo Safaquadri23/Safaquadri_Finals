@@ -1,0 +1,1369 @@
+﻿1-A:-
+
+
+CODE1--
+(index.html)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopMart Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      background-color: #f5f6fa;
+    }
+    .sidebar {
+      height: 100vh;
+      background-color: #1e1e2f;
+      color: white;
+      padding: 20px;
+      position: fixed;
+    }
+    .sidebar a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      margin: 10px 0;
+    }
+    .main-content {
+      margin-left: 220px;
+      padding: 20px;
+    }
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="d-flex">
+    <!-- Sidebar -->
+    <div class="sidebar col-2">
+      <h4 class="text-success fw-bold">SHOP<span class="text-primary">MART</span></h4>
+      <p class="mt-4">?? Admin User</p>
+      <a href="#">?? Home</a>
+      <a href="#">? About</a>
+      <a href="#">?? Dashboard</a>
+      <a href="#">?? Products</a>
+      <a href="#">?? Orders</a>
+      <a href="#">?? Customers</a>
+      <a href="#">?? Reports</a>
+    </div>
+
+
+    <!-- Main Dashboard -->
+    <div class="main-content col">
+      <div class="d-flex justify-content-between mb-4">
+        <h2>Dashboard</h2>
+        <input type="text" class="form-control w-25" placeholder="Search">
+      </div>
+
+
+      <!-- Top Cards -->
+      <div class="row mb-4">
+        <div class="col-md-4">
+          <div class="card border-success">
+            <div class="card-body">
+              <div class="card-title">Total Sales</div>
+              <h3>$120,000 <span class="text-success small">? +10%</span></h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-danger">
+            <div class="card-body">
+              <div class="card-title">Orders</div>
+              <h3>1,540 <span class="text-danger small">? -3%</span></h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-success">
+            <div class="card-body">
+              <div class="card-title">New Customers</div>
+              <h3>240 <span class="text-success small">? +15%</span></h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Graphs -->
+      <div class="row">
+        <div class="col-md-7">
+          <h5>Sales Overview</h5>
+          <canvas id="lineChart"></canvas>
+        </div>
+        <div class="col-md-5">
+          <h5>Top Selling Categories</h5>
+          <canvas id="doughnutChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Charts JS -->
+  <script>
+    const ctx1 = document.getElementById('lineChart').getContext('2d');
+    new Chart(ctx1, {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        datasets: [{
+          label: 'Sales',
+          data: [30000, 41000, 32000, 50000, 48000, 54000],
+          fill: true,
+          borderColor: 'rgb(75, 192, 192)',
+          tension: 0.3,
+          backgroundColor: 'rgba(75, 192, 192, 0.2)'
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false }
+        }
+      }
+    });
+
+
+    const ctx2 = document.getElementById('doughnutChart').getContext('2d');
+    new Chart(ctx2, {
+      type: 'doughnut',
+      data: {
+        labels: ['Electronics', 'Clothing', 'Home Decor', 'Beauty', 'Sports'],
+        datasets: [{
+          label: 'Top Categories',
+          data: [25, 20, 15, 20, 20],
+          backgroundColor: ['#20c997', '#f44336', '#fdd835', '#42a5f5', '#8e24aa']
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'bottom' }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+CODE2 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopMart Dashboard</title>
+
+
+  <!-- ? Local Bootstrap CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+  <style>
+    body {
+      background-color: #f5f6fa;
+    }
+    .sidebar {
+      height: 100vh;
+      background-color: #1e1e2f;
+      color: white;
+      padding: 20px;
+      position: fixed;
+    }
+    .sidebar a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      margin: 10px 0;
+    }
+    .main-content {
+      margin-left: 220px;
+      padding: 20px;
+    }
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="d-flex">
+    <!-- Sidebar -->
+    <div class="sidebar col-2">
+      <h4 class="text-success fw-bold">SHOP<span class="text-primary">MART</span></h4>
+      <p class="mt-4">?? Admin User</p>
+      <a href="#">?? Home</a>
+      <a href="#">? About</a>
+      <a href="#">?? Dashboard</a>
+      <a href="#">?? Products</a>
+      <a href="#">?? Orders</a>
+      <a href="#">?? Customers</a>
+      <a href="#">?? Reports</a>
+    </div>
+
+
+    <!-- Main Dashboard -->
+    <div class="main-content col">
+      <div class="d-flex justify-content-between mb-4">
+        <h2>Dashboard</h2>
+        <input type="text" class="form-control w-25" placeholder="Search">
+      </div>
+
+
+      <!-- Top Cards -->
+      <div class="row mb-4">
+        <div class="col-md-4">
+          <div class="card border-success">
+            <div class="card-body">
+              <div class="card-title">Total Sales</div>
+              <h3>$120,000 <span class="text-success small">? +10%</span></h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-danger">
+            <div class="card-body">
+              <div class="card-title">Orders</div>
+              <h3>1,540 <span class="text-danger small">? -3%</span></h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-success">
+            <div class="card-body">
+              <div class="card-title">New Customers</div>
+              <h3>240 <span class="text-success small">? +15%</span></h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Graphs -->
+      <div class="row">
+        <div class="col-md-7">
+          <h5>Sales Overview</h5>
+          <canvas id="lineChart"></canvas>
+        </div>
+        <div class="col-md-5">
+          <h5>Top Selling Categories</h5>
+          <canvas id="doughnutChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ? Local Bootstrap Bundle JS -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+
+
+  <!-- Charts JS -->
+  <script>
+    const ctx1 = document.getElementById('lineChart').getContext('2d');
+    new Chart(ctx1, {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        datasets: [{
+          label: 'Sales',
+          data: [30000, 41000, 32000, 50000, 48000, 54000],
+          fill: true,
+          borderColor: 'rgb(75, 192, 192)',
+          tension: 0.3,
+          backgroundColor: 'rgba(75, 192, 192, 0.2)'
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false }
+        }
+      }
+    });
+
+
+    const ctx2 = document.getElementById('doughnutChart').getContext('2d');
+    new Chart(ctx2, {
+      type: 'doughnut',
+      data: {
+        labels: ['Electronics', 'Clothing', 'Home Decor', 'Beauty', 'Sports'],
+        datasets: [{
+          label: 'Top Categories',
+          data: [25, 20, 15, 20, 20],
+          backgroundColor: ['#20c997', '#f44336', '#fdd835', '#42a5f5', '#8e24aa']
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'bottom' }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+1-B :- 
+(index.html)
+INDEX.HTML 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Registration</title>
+</head>
+<body>
+  <h2>User Registration</h2>
+  <form id="registerForm">
+    <input type="text" id="name" placeholder="Name" required><br><br>
+    <input type="email" id="email" placeholder="Email" required><br><br>
+    <input type="password" id="password" placeholder="Password" required><br><br>
+    <button type="submit">Register</button>
+  </form>
+  <br>
+  <a href="users.html">View Registered Users</a>
+
+
+  <script>
+    document.getElementById("registerForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+
+      const user = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        password: document.getElementById("password").value
+      };
+
+
+      // Save to Local Storage
+      let users = JSON.parse(localStorage.getItem("users")) || [];
+      users.push(user);
+      localStorage.setItem("users", JSON.stringify(users));
+
+
+      // Send to server using AJAX (simulated)
+      fetch("https://jsonplaceholder.typicode.com/posts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(user)
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert("User Registered and Sent!");
+        document.getElementById("registerForm").reset();
+      })
+      .catch(error => console.error("Error:", error));
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+USERS.HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registered Users</title>
+</head>
+<body>
+  <h2>Registered Users List</h2>
+  <ul id="userList"></ul>
+
+
+  <script>
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const userList = document.getElementById("userList");
+
+
+    users.forEach((user, index) => {
+      const li = document.createElement("li");
+      li.textContent = ${index + 1}. ${user.name} | ${user.email};
+      userList.appendChild(li);
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+2 A:- 
+? PART 1: Create GitHub Account (if you don t have one)
+1. Go to: https://github.com
+2. Click Sign Up.
+3. Fill in:
+o Username
+o Email
+o Password
+4. Verify your email.
+5. Done! Now you have a GitHub account ?
+
+
+? PART 2: Install Git on Your Computer
+?? Windows:
+* Download Git from: https://git-scm.com/download/win
+* Install with default settings (just click Next ? Next ? Next)
+?? Ubuntu/Linux:
+bash
+CopyEdit
+sudo apt update
+sudo apt install git
+?? macOS:
+bash
+CopyEdit
+brew install git
+
+
+? PART 3: Set Up Git (First-Time Setup Only)
+Open Command Prompt (Windows) or Terminal (Linux/macOS):
+bash
+CopyEdit
+git config --global user.name "Your Name"
+git config --global user.email "your-email@example.com"
+You can check:
+bash
+CopyEdit
+git config --list
+
+
+? PART 4: Create Local Git Repository
+Steps:
+1. Create a new folder for your project:
+bash
+CopyEdit
+mkdir MyDashboardProject
+cd MyDashboardProject
+2. Create an HTML file:
+bash
+CopyEdit
+notepad index.html
+Paste your dashboard code here and save.
+3. Initialize Git in this folder:
+bash
+CopyEdit
+git init
+4. Check Git status:
+bash
+CopyEdit
+git status
+
+
+? PART 5: Add and Commit Code
+1. Add your file to the Git staging area:
+bash
+CopyEdit
+git add index.html
+2. Commit the file (save snapshot):
+bash
+CopyEdit
+git commit -m "Initial commit with dashboard HTML"
+
+
+? PART 6: Create Repository on GitHub
+1. Log in to GitHub.
+2. Click + ? New Repository
+3. Fill:
+o Repository name: MyDashboardProject
+o Keep Public or Private (your choice)
+o ? Do NOT tick  Initialize with README  (important)
+4. Click Create repository
+You will now see instructions like this (DON'T PANIC):
+pgsql
+CopyEdit
+ or push an existing repository from the command line
+
+
+? PART 7: Connect Local Repo to GitHub & Push
+1. Copy the GitHub remote URL:
+Example: https://github.com/YourUsername/MyDashboardProject.git
+2. In your terminal:
+bash
+CopyEdit
+git remote add origin https://github.com/YourUsername/MyDashboardProject.git
+3. Push your code:
+bash
+CopyEdit
+git push -u origin master
+If you get an error about the branch being main, try:
+bash
+CopyEdit
+git push -u origin main
+If prompted for a username and password:
+* Use your GitHub username
+* Use a personal access token instead of a password (GitHub has disabled password auth)
+?? Create token here
+
+
+? Final Output
+Now visit your GitHub repo page ? you ll see index.html uploaded and committed!
+
+
+---------------
+ASS2A
+Create a repository in github 
+First create a folder in desktop
+Open that folder in vsc
+Step one create one more folder by commands
+->mkdir partA
+Then create a file in vsc under partA
+->file1.txt
+->add some content in it
+NOW PUSHING FIRST FILE:
+1. git  version
+2. git init
+3. git add .
+4. git status
+5. git remote add origin "(link of repository)"
+6.  git commit -m "First commit"
+7. git config --global user.name "Safa Quadri"
+8. >> git config --global user.email "safaquadri2303@gmail.com"
+9. git commit -m "First commit"
+10.  git status
+11. git push -u origin master
+
+
+
+
+
+
+2 B:- 
+?? STEP 1: INSTALL DOCKER (Important!)
+?? On Ubuntu (Linux):
+bash
+CopyEdit
+sudo apt update
+sudo apt install docker.io
+sudo systemctl start docker
+sudo systemctl enable docker
+? Check Docker version:
+bash
+CopyEdit
+docker --version
+? Add user to Docker group:
+bash
+CopyEdit
+sudo usermod -aG docker $USER
+Then run:
+bash
+CopyEdit
+newgrp docker
+
+
+? STEP 2: (Optional) Install NVIDIA Docker (if using GPU / CUDA)
+Only do this if asked for NVIDIA Docker (skip if not using GPU or if question is general).
+?? For NVIDIA Docker:
+bash
+CopyEdit
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
+curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+sudo apt update
+sudo apt install -y nvidia-docker2
+sudo systemctl restart docker
+? To test NVIDIA Docker works:
+bash
+CopyEdit
+docker run --rm --gpus all nvidia/cuda:12.2.0-base nvidia-smi
+
+
+?? STEP 3: Pull a Docker Image (Base Environment)
+You can pull any basic image, e.g., Ubuntu or Python:
+bash
+CopyEdit
+docker pull ubuntu
+OR for Python:
+bash
+CopyEdit
+docker pull python:3.10
+
+
+?? STEP 4: Run a Docker Container
+To run and enter Ubuntu container:
+bash
+CopyEdit
+docker run -it ubuntu
+Now you are inside the container. Try:
+bash
+CopyEdit
+echo "Hello from Docker"
+Exit container:
+bash
+CopyEdit
+exit
+
+
+?? STEP 5: Check Running Containers
+bash
+CopyEdit
+docker ps -a
+To stop a running container:
+bash
+CopyEdit
+docker stop <container_id>
+To remove a container:
+bash
+CopyEdit
+docker rm <container_id>
+To remove an image:
+bash
+CopyEdit
+docker rmi <image_id>
+
+
+?? OPTIONAL: Dockerfile (If asked to create one)
+You can create a Dockerfile (a text file with no extension):
+Dockerfile
+CopyEdit
+# Dockerfile
+FROM ubuntu
+RUN apt update && apt install -y python3
+CMD ["python3"]
+Then build it:
+bash
+CopyEdit
+docker build -t mycontainer .
+Run it:
+bash
+CopyEdit
+docker run -it mycontainer
+
+
+? FINAL PRACTICAL CHECKLIST
+Task
+Done?
+Docker Installed
+?
+Docker Image Pulled (e.g., Ubuntu or Python)
+?
+Docker Container Created and Run
+?
+Commands: docker pull, docker run, docker ps
+?
+(Optional) NVIDIA Docker Setup
+? (if required)
+(Optional) Dockerfile created and built
+? (if asked)
+? Sample Output for Viva
+If you run this:
+bash
+CopyEdit
+docker run -it ubuntu
+And inside you type:
+bash
+CopyEdit
+echo "Hello from Docker"
+Expected output:
+csharp
+CopyEdit
+Hello from Docker
+---------------------------------------------
+ASS2B
+# Dockerfile
+FROM ubuntu
+RUN apt update && apt install -y python3
+CMD ["python3"]
+
+
+
+
+docker pull ubuntu
+docker run -it ubuntu
+echo "Hello from Docker"
+exit
+
+
+>docker ps -a
+
+
+docker stop <container_id>
+
+
+
+
+>docker rm 20eb56734dba
+
+
+>docker rmi ubuntu
+>mkdir dockerlearn
+
+
+
+
+>cd dockerlearn
+>docker build -t mycontainer .
+
+
+>docker run -it mycontainer
+
+
+>>> print("Hello from Docker")
+
+
+>>> exit()
+
+
+
+
+
+
+2 C:- 
+app.component.html
+html
+Copy
+Edit
+<h1>{{ title }}</h1>
+
+
+<input type="text" #name placeholder="Enter Your Name" name="Name"> <br>
+<input type="text" #address placeholder="Enter Your Address" name="Address"> <br>
+<input type="text" #contact placeholder="Enter Your Contact" name="Contact"> <br>
+<input type="email" #email placeholder="Enter Your Email" name="Email"> <br>
+<input type="password" #password placeholder="Enter Your Password" name="Password"> <br><br>
+
+
+<button (click)="getValue(name.value, address.value, contact.value, email.value)">Register</button>
+
+
+<h3>Output:</h3>
+<p><b>Name:</b> {{ displayname }}</p>
+<p><b>Address:</b> {{ displayaddress }}</p>
+<p><b>Contact:</b> {{ displaycontact }}</p>
+<p><b>Email:</b> {{ displayemail }}</p>
+
+
+app.component.css
+css
+Copy
+Edit
+input {
+  width: 400px;
+  height: 20px;
+  margin: 10px;
+  padding: 3px;
+  color: brown;
+}
+
+
+button {
+  padding: 8px 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+
+h1, h3 {
+  color: darkblue;
+}
+
+
+app.component.ts
+ts
+Copy
+Edit
+import { Component } from '@angular/core';
+
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'Registration Form';
+  displayname = '';
+  displayaddress = '';
+  displaycontact = '';
+  displayemail = '';
+
+
+  getValue(name: string, address: string, contact: string, email: string) {
+    this.displayname = name;
+    this.displayaddress = address;
+    this.displaycontact = contact;
+    this.displayemail = email;
+  }
+}
+--------------------
+ASS2C
+Npm  version
+Npm install -g @angular/cli@latest
+Ng new partc
+Y
+Css
+Put codes
+Then in  terminal
+Cd partc
+Ng serve
+Y
+
+
+
+
+
+
+3 A:- 
+
+
+(COMMANDS)
+create a public folder inside the my-static-site directory where your static files will be stored:
+
+
+bash
+Copy
+Edit
+mkdir public
+
+
+(INDEX.HTML)
+public/index.html:
+html
+Copy
+Edit
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Static Site</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Welcome to My Static Website</h1>
+    <p>This is a simple static website served by Node.js and Express.</p>
+    <script src="scripts.js"></script>
+</body>
+</html>
+
+
+(STYLE.CSS)
+public/styles.css:
+css
+Copy
+Edit
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    padding-top: 50px;
+}
+
+
+h1 {
+    color: #333;
+}
+
+
+p {
+    font-size: 18px;
+    color: #666;
+}
+
+
+(COMMAND)
+6. Create the scripts.js File
+Inside the public folder, create a scripts.js file for any client-side JavaScript functionality.
+
+
+public/scripts.js:
+javascript
+Copy
+Edit
+console.log("Welcome to the static site!");
+7.Create the server.js File
+// Import the Express module
+const express = require('express');
+
+
+// Create an Express application
+const app = express();
+
+
+// Define the port number
+const PORT = 3000;
+
+
+// Use express.static middleware to serve static files from the 'public' directory
+app.use(express.static('public'));
+
+
+// Start the server and listen on the defined port
+app.listen(PORT, () => {
+  console.log(`Server is running at http://localhost:${PORT}`);
+});
+
+
+
+
+
+
+my-static-site/
+?
+??? node_modules/        # Directory where npm packages are installed
+??? public/              # Directory for static files
+?   ??? index.html       # HTML content
+?   ??? styles.css       # CSS styling
+?   ??? scripts.js       # JavaScript
+??? package.json         # npm project configuration
+??? package-lock.json    # Lock file for dependencies
+??? server.js
+(RUN COMMAND ON TERMINAL)
+node server.js
+
+
+
+
+
+
+
+
+3 B:-
+?? TOOLS USED
+Tool
+Purpose
+Node.js + Express
+Backend server
+MongoDB Compass
+Local GUI for database
+MongoDB
+Stores user data
+Angular
+Frontend (you already have)
+? STEP-BY-STEP FULL GUIDE
+
+
+?? STEP 1: Set Up Backend Folder
+bash
+CopyEdit
+mkdir registration-api
+cd registration-api
+npm init -y
+npm install express mongoose cors body-parser
+
+
+?? Folder Structure
+pgsql
+CopyEdit
+registration-api/
+?
+??? index.js
+??? models/
+?   ??? User.js
+??? routes/
+    ??? userRoutes.js
+
+
+?? STEP 2: MongoDB Compass   Create Database
+1. Open MongoDB Compass.
+2. Click on "Create Database".
+o Name: registrationDB
+o Collection: users
+3. Click "Create Database".
+
+
+?? STEP 3: models/User.js
+js
+CopyEdit
+// models/User.js
+const mongoose = require('mongoose');
+
+
+const userSchema = new mongoose.Schema({
+  name: String,
+  address: String,
+  contact: String,
+  email: String,
+  password: String,
+});
+
+
+module.exports = mongoose.model('User', userSchema);
+
+
+?? STEP 4: routes/userRoutes.js
+js
+CopyEdit
+// routes/userRoutes.js
+const express = require('express');
+const router = express.Router();
+const User = require('../models/User');
+
+
+// CREATE (POST)
+router.post('/register', async (req, res) => {
+  try {
+    const newUser = new User(req.body);
+    await newUser.save();
+    res.status(201).send('User Registered');
+  } catch (err) {
+    res.status(400).send(err.message);
+  }
+});
+
+
+// READ (GET)
+router.get('/users', async (req, res) => {
+  try {
+    const users = await User.find();
+    res.json(users);
+  } catch (err) {
+    res.status(500).send(err.message);
+  }
+});
+
+
+// UPDATE (PUT)
+router.put('/update/:id', async (req, res) => {
+  try {
+    await User.findByIdAndUpdate(req.params.id, req.body);
+    res.send('User Updated');
+  } catch (err) {
+    res.status(400).send(err.message);
+  }
+});
+
+
+// DELETE (DELETE)
+router.delete('/delete/:id', async (req, res) => {
+  try {
+    await User.findByIdAndDelete(req.params.id);
+    res.send('User Deleted');
+  } catch (err) {
+    res.status(500).send(err.message);
+  }
+});
+
+
+module.exports = router;
+
+
+?? STEP 5: index.js (Main Server File)
+js
+CopyEdit
+// index.js
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const userRoutes = require('./routes/userRoutes');
+
+
+const app = express();
+const PORT = 3000;
+
+
+// Middleware
+app.use(cors());
+app.use(bodyParser.json());
+
+
+// MongoDB Connection
+mongoose.connect('mongodb://localhost:27017/registrationDB', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+}).then(() => {
+  console.log('? Connected to MongoDB');
+}).catch((err) => {
+  console.error('? MongoDB connection error:', err);
+});
+
+
+// Routes
+app.use('/api', userRoutes);
+
+
+// Start Server
+app.listen(PORT, () => {
+  console.log(`?? Server running on http://localhost:${PORT}`);
+});
+
+
+? STEP 6: Run Your Backend
+bash
+CopyEdit
+node index.js
+You ll see:
+arduino
+CopyEdit
+? Connected to MongoDB  
+?? Server running on http://localhost:3000
+
+
+? TESTING YOUR API (Using Postman or Angular)
+You can test the API using Postman or integrate it with your Angular frontend.
+
+
+?? API OVERVIEW
+Method
+URL
+Description
+POST
+/api/register
+Register new user
+GET
+/api/users
+Get all users
+PUT
+/api/update/:id
+Update user by ID
+DELETE
+/api/delete/:id
+Delete user by ID
+4 A:- 
+INDEX.HTML:- 
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mobile Registration Form</title>
+
+
+  <!-- Offline jQuery Mobile CSS -->
+  <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+
+  <!-- Offline jQuery and jQuery Mobile JS -->
+  <script src="js/jquery-1.12.4.min.js"></script>
+  <script src="js/jquery.mobile-1.4.5.min.js"></script>
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+
+
+<!-- Registration Page -->
+<div data-role="page" id="register">
+
+
+  <div data-role="header" class="custom-header">
+    <h1>Register</h1>
+  </div>
+
+
+  <div role="main" class="ui-content">
+    <form id="registrationForm">
+      <label for="fullname">Full Name:</label>
+      <input type="text" name="fullname" id="fullname" placeholder="Enter your full name" required>
+
+
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" placeholder="Enter your email" required>
+
+
+      <label for="password">Password:</label>
+      <input type="password" name="password" id="password" placeholder="Enter password" required>
+
+
+      <label for="gender">Gender:</label>
+      <select name="gender" id="gender" data-role="slider">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+
+
+      <label for="dob">Date of Birth:</label>
+      <input type="date" name="dob" id="dob" required>
+
+
+      <button type="submit" class="ui-btn ui-btn-b">Submit</button>
+    </form>
+  </div>
+
+
+  <div data-role="footer" class="custom-footer">
+    <h4>jQuery Mobile Demo   2024</h4>
+  </div> 
+
+
+</div>
+</body>
+</html>
+
+
+STYLE.CSS:-
+
+
+.custom-header {
+  background-color: #007bff !important;
+  color: white !important;
+  text-align: center;
+}
+
+
+.custom-header h1 {
+  color: white !important;
+}
+
+
+.custom-footer {
+  text-align: center;
+  background-color: #f1f1f1 !important;
+}
+
+
+SCRIPT.JS:- 
+$(document).ready(function () {
+  $('#registrationForm').submit(function (e) {
+    e.preventDefault();
+
+
+    const user = {
+      name: $('#fullname').val(),
+      email: $('#email').val(),
+      password: $('#password').val(),
+      gender: $('#gender').val(),
+      dob: $('#dob').val()
+    };
+
+
+    alert(`Welcome, ${user.name}!\nYour registration is successful.`);
+
+
+    let users = JSON.parse(localStorage.getItem('users')) || [];
+    users.push(user);
+    localStorage.setItem('users', JSON.stringify(users));
+
+
+    $(this).trigger('reset');
+  });
+});
+
+
+
+
+ORRRR:- 
+Index.html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mobile Registration Form</title>
+
+
+  <!-- jQuery Mobile -->
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+
+
+<!-- Registration Page -->
+<div data-role="page" id="register">
+
+
+  <div data-role="header" class="custom-header">
+    <h1>Register</h1>
+  </div>
+
+
+  <div role="main" class="ui-content">
+    <form id="registrationForm">
+      <label for="fullname">Full Name:</label>
+      <input type="text" name="fullname" id="fullname" placeholder="Enter your full name" required>
+
+
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" placeholder="Enter your email" required>
+
+
+      <label for="password">Password:</label>
+      <input type="password" name="password" id="password" placeholder="Enter password" required>
+
+
+      <label for="gender">Gender:</label>
+      <select name="gender" id="gender" data-role="slider">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+
+
+      <label for="dob">Date of Birth:</label>
+      <input type="date" name="dob" id="dob" required>
+
+
+      <button type="submit" class="ui-btn ui-btn-b">Submit</button>
+    </form>
+  </div>
+
+
+  <div data-role="footer" class="custom-footer">
+    <h4>jQuery Mobile Demo   2024</h4>
+  </div> 
+</div></body>
+</html>
+
+
+Style.css
+.custom-header {
+    background-color: #007bff !important;
+    color: white !important;
+    text-align: center;
+  }
+  
+  .custom-header h1 {
+    color: white !important;
+  }
+  
+  .custom-footer {
+    text-align: center;
+    background-color: #f1f1f1 !important;
+  }
+  
+Script.js
+$(document).ready(function () {
+    $('#registrationForm').submit(function (e) {
+      e.preventDefault();
+  
+      // Get form data
+      const user = {
+        name: $('#fullname').val(),
+        email: $('#email').val(),
+        password: $('#password').val(),
+        gender: $('#gender').val(),
+        dob: $('#dob').val()
+      };
+  
+      // Display it or send it via AJAX
+      alert(`Welcome, ${user.name}!\nYour registration is successful.`);
+  
+      // Optionally store in localStorage
+      let users = JSON.parse(localStorage.getItem('users')) || [];
+      users.push(user);
+      localStorage.setItem('users', JSON.stringify(users));
+  
+      // Reset form
+      $(this).trigger('reset');
+    }); });
