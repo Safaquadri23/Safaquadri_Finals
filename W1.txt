@@ -1,0 +1,111 @@
+﻿ASS2A
+Create a repository in github 
+First create a folder in desktop
+Open that folder in vsc
+Step one create one more folder by commands
+->mkdir partA
+Then create a file in vsc under partA
+->file1.txt
+->add some content in it
+NOW PUSHING FIRST FILE:
+1. git –version
+2. git init
+3. git add .
+4. git status
+5. git remote add origin "(link of repository)"
+6.  git commit -m "First commit"
+7. git config --global user.name "Safa Quadri"
+8. >> git config --global user.email "safaquadri2303@gmail.com"
+9. git commit -m "First commit"
+10.  git status
+11. git push -u origin master
+
+
+ASS2B
+# Dockerfile
+FROM ubuntu
+RUN apt update && apt install -y python3
+CMD ["python3"]
+
+
+
+
+
+
+docker pull ubuntu
+docker run -it ubuntu
+echo "Hello from Docker"
+exit
+
+
+>docker ps -a
+
+
+
+
+docker stop <container_id>
+
+
+
+
+
+
+>docker rm 20eb56734dba
+
+
+
+
+>docker rmi ubuntu
+>mkdir dockerlearn
+
+
+
+
+
+
+>cd dockerlearn
+>docker build -t mycontainer .
+
+
+>docker run -it mycontainer
+
+
+>>> print("Hello from Docker")
+
+
+>>> exit()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ASS2C
+Npm –version
+Npm install -g @angular/cli@latest
+Ng new partc
+Y
+Css
+Put codes
+Then in  terminal
+Cd partc
+Ng serve
+Y
